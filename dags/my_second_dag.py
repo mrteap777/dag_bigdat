@@ -15,7 +15,8 @@ with DAG(dag_id="demo2", start_date=datetime(2022, 1, 1), schedule_interval="0 0
         print("airflow")
 
     # Еще одна задача BashOperator
-    bash_task = BashOperator(task_id="bash_task", bash_command="echo executing bash task")
-
+    bash_task = BashOperator(task_id="bash_task", bash_command="python3 '/opt/airflow/dags/test.py'")
+    bash_task2 = BashOperator(task_id="bash_task2", bash_command="python3 '/opt/airflow/dags/test.py'")
+    bash_task3 = BashOperator(task_id="bash_task3", bash_command="python3 '/opt/airflow/dags/test.py'")
     # Задаем зависимости между задачами для последовательного выполнения
-    hello >> airflow_task() >> bash_task
+    hello >> airflow_task() >> bash_task >> bash_task2 >> bash_task3

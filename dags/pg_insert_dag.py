@@ -11,8 +11,8 @@ postgre_con_port = postgre_con.port
 
 
 default_args = {
-    'owner': 'Peretolchin.YuS',
-    'email': ['yuriy.peretolchin@mail.com'],
+    'owner': 'airflow',
+    'email': ['mrteap@ya.ry'],
     'retries': 3,
     'retry_delay': timedelta(minutes=5),
     'email_on_retry': False,
