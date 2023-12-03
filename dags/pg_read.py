@@ -1,7 +1,6 @@
 import argparse
 import pandas as pd
 from sqlalchemy import create_engine
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Описание")
     parser.add_argument('host', type=str)
@@ -26,5 +25,6 @@ if __name__ == '__main__':
     df = pd.read_sql(sql, engine)
 
     print(df.info())
+
     print('Первый даг закончил свою работу')
 
